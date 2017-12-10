@@ -1,0 +1,30 @@
+body {
+    background: #2f4725;
+}
+
+.lets {
+    font-family: 'Amatic SC';
+    padding-top: 25px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 12px;
+  }
+  
+  .beer1 {
+    padding-top: 5px;
+      color: white;
+      text-shadow: 2px 2px 50px #c8e5bc;
+      font-size: 150px;
+      text-align: center;
+  }
+  
+  .beerlist {
+    color: white;
+  }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  
+}
