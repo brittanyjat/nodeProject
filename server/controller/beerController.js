@@ -5,12 +5,12 @@ let beers = [];
 let id = 0;
 
 module.exports = {
-    // create: ( req, res ) => {
-    //     const { name, tagline, first_brewed, description, image_url, abv, ibu } = req.body;
-    //     beers.push({ id, name, tagline, first_brewed, description, image_url, abv, ibu});
-    //     id++;
-    //     res.status(200).send( beers );
-    // },
+    create: ( req, res ) => {
+        let { name, tagline, first_brewed, description, abv, ibu } = req.body;
+        beers.push({ id, name, tagline, first_brewed, description, abv, ibu});
+        id ++;
+        res.status(200).send( beers );
+    },
 
     read: (req, res) => {
         let promise = axios.get('https://api.punkapi.com/v2/beers');
@@ -29,10 +29,11 @@ module.exports = {
     },
 
     delete: (req, res) => {
-        const deleteID = req.params.id;
-        beerId = beers.findIndex( beer => beer.id == deleteId );
-        beers.splice( beerId, 1);
-        res.status(200).send( books );
+        const deleteId = req.params.id;
+        beerIndex = beers.findIndex( beer => beer.id == deleteId );
+        if (beerIndex !== -1){
+        beers.splice(beerIndex, 1)};
+        res.status(200).send( beers )
 
     },
 }

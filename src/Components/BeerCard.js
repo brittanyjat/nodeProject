@@ -5,7 +5,7 @@ class BeerCard extends Component {
     constructor(props){
         super(props)
         this.state = {
-            editting: false
+            editting: false,
         };
         this.handleEdit = this.handleEdit.bind(this);
     }
@@ -29,12 +29,16 @@ class BeerCard extends Component {
         this.handleEdit();
     }
 
+ 
+
+
     render(){
         return(
             <article className="card">
                 { this.state.editting === true
                   ? <input placeholder="name" ref="name"/>
                   : <h1>{this.props.name}</h1>}
+                  <br></br>
                 { this.state.editting === true
                   ? <input placeholder="tagline" ref="tagline"/>
                   : <p><strong>Tagline: {this.props.tagline}</strong></p>}
@@ -51,7 +55,10 @@ class BeerCard extends Component {
                   ? <button onClick={() => this.handleSubmit()}>Submit</button>
                   : null }
                 <button onClick={this.handleEdit}>Edit</button>
-                <button onClick={null}>Delete</button>
+                <button onClick={() => this.props.handleDelete(this.props.id)}>Delete</button>
+                <br></br>
+
+                <br></br>
             </article>
         )
     }

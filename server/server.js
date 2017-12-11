@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 
 // endpoints
-// app.post('/api/beers', beerController.create);
+app.post('/api/beers', beerController.create);
 app.get('/api/beers', beerController.read);
 app.put('/api/beers/:id', beerController.update);
 app.delete('/api/beers/:id', beerController.delete);
